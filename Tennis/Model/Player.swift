@@ -11,7 +11,11 @@ class Player {
         score += 1
     }
     
-    func getScore() -> String {
+    func getScore() -> Int {
+        return score
+    }
+    
+    func translateScore() -> String {
         switch score {
         case 0:
             return Points.Love.rawValue
