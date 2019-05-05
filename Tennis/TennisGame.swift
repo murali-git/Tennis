@@ -17,15 +17,19 @@ class TennisGame {
     }
     
     func getPlayersScore() -> String {
-        if(isAdvantage()) {
+        if hasAnyPlayerWon() {
+            return highestScorePlayerName() + " " + TennisConstant.Won.rawValue
+        }
+        
+        if isAdvantage() {
             return TennisConstant.Advantage.rawValue + " " + highestScorePlayerName()
         }
         
-        if(isDeuce()) {
+        if isDeuce() {
             return TennisConstant.Deuce.rawValue
         }
         
-        if(isPlayersScoresEqual()) {
+        if isPlayersScoresEqual() {
             return firstPlayer.translateScore() + " " + TennisConstant.All.rawValue
         }
 
@@ -33,6 +37,10 @@ class TennisGame {
     }
     
     // MARK: Tennis Game scenarios
+    private func hasAnyPlayerWon() -> Bool {
+        return isBothPlayerScoreGreaterThanOrEqualToFourty() && isPointDifferenceMoreThanOne()
+    }
+    
     private func isAdvantage() -> Bool {
         return isBothPlayerScoreGreaterThanOrEqualToFourty() && isPointDifferenceIsOne()
     }
@@ -46,24 +54,12 @@ class TennisGame {
     }
 
     // MARK: Helper Methods for tennis score scenarios
+    private func isPointDifferenceMoreThanOne() -> Bool {
+        return abs(firstPlayer.getScore() - secondPlayer.getScore()) > 1
+    }
+    
     private func isPointDifferenceIsOne() -> Bool {
-        if hasFirstPlayerGotHighestScore() {
-            return hasFirstPlayerTakenAdvantage()
-        }
-        
-        return hasSecondPlayerTakenAdvantage()
-    }
-    
-    private func hasFirstPlayerTakenAdvantage() -> Bool {
-        return firstPlayer.getScore() - secondPlayer.getScore() == 1
-    }
-    
-    private func hasSecondPlayerTakenAdvantage() -> Bool {
-        return secondPlayer.getScore() - firstPlayer.getScore() == 1
-    }
-
-    private func hasFirstPlayerGotHighestScore() -> Bool {
-        return firstPlayer.getScore() > secondPlayer.getScore()
+        return abs(firstPlayer.getScore() - secondPlayer.getScore()) == 1
     }
     
     private func highestScorePlayerName() -> String {
@@ -72,6 +68,10 @@ class TennisGame {
         }
         
         return secondPlayer.name()
+    }
+    
+    private func hasFirstPlayerGotHighestScore() -> Bool {
+        return firstPlayer.getScore() > secondPlayer.getScore()
     }
     
     private func isBothPlayerScoreGreaterThanOrEqualToFourty() -> Bool{

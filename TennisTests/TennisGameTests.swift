@@ -53,6 +53,15 @@ class TennisGameTests: XCTestCase {
         XCTAssertEqual("Advantage SecondPlayer",tennisGame.getPlayersScore())
     }
     
+    func test_ShouldReturnPlayerHasWon_WhenPlayerScoresMoreThanFourtyAndDifferenceIsMoreThanOne() {
+        let tennisGame = buildTennisGame()
+        
+        self.winConsequtivePointsForPlayerOne(5, tennisGame: tennisGame)
+        self.winConsequtivePointsForPlayerTwo(7, tennisGame: tennisGame)
+        
+        XCTAssertEqual("SecondPlayer Won",tennisGame.getPlayersScore())
+    }
+    
     private func buildTennisGame() -> TennisGame {
         let firstPlayer = buildPlayer("FirstPlayer")
         let secondPlayer = buildPlayer("SecondPlayer")
