@@ -2,24 +2,24 @@ import XCTest
 @testable import Tennis
 
 class TennisGameTests: XCTestCase {
+    private var tennisGame: TennisGame!
+    
+    override func setUp() {
+        tennisGame = buildTennisGame()
+    }
     
     func test_ShouldReturnLoveAll_WhenTennisGameIsInitialized() {
-        let tennisGame = buildTennisGame()
-        
+
         XCTAssertEqual("Love All",tennisGame.getPlayersScore())
     }
     
     func test_ShouldReturnFifteenLove_WhenFirstPlayerTakesThePoint() {
-        let tennisGame = buildTennisGame()
-        
         tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
         
         XCTAssertEqual("Fifteen - Love",tennisGame.getPlayersScore())
     }
     
     func test_ShouldReturnFifteenThirty_WhenSecondPlayerScoresTwoPoint() {
-        let tennisGame = buildTennisGame()
-        
         tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
         self.winConsequtivePointsForPlayerTwo(2, tennisGame: tennisGame)
         
@@ -27,8 +27,6 @@ class TennisGameTests: XCTestCase {
     }
     
     func test_ShouldReturnDeuce_WhenBothPlayerScoresSameScoreAndMoreThanOrEqualToFourty() {
-        let tennisGame = buildTennisGame()
-        
         self.winConsequtivePointsForPlayerOne(3, tennisGame: tennisGame)
         self.winConsequtivePointsForPlayerTwo(3, tennisGame: tennisGame)
         
@@ -36,8 +34,6 @@ class TennisGameTests: XCTestCase {
     }
     
     func test_ShouldReturnAdvantageForPlayerOne_WhenPlayerScoresAdditionalPointAfterDeuce() {
-        let tennisGame = buildTennisGame()
-        
         self.winConsequtivePointsForPlayerOne(4, tennisGame: tennisGame)
         self.winConsequtivePointsForPlayerTwo(3, tennisGame: tennisGame)
         
@@ -45,8 +41,6 @@ class TennisGameTests: XCTestCase {
     }
     
     func test_ShouldReturnAdvantageForPlayerTwo_WhenPlayerScoresAdditionalPointAfterDeuce() {
-        let tennisGame = buildTennisGame()
-        
         self.winConsequtivePointsForPlayerOne(5, tennisGame: tennisGame)
         self.winConsequtivePointsForPlayerTwo(6, tennisGame: tennisGame)
         
@@ -54,8 +48,6 @@ class TennisGameTests: XCTestCase {
     }
     
     func test_ShouldReturnPlayerHasWon_WhenPlayerScoresMoreThanFourtyAndDifferenceIsMoreThanOne() {
-        let tennisGame = buildTennisGame()
-        
         self.winConsequtivePointsForPlayerOne(5, tennisGame: tennisGame)
         self.winConsequtivePointsForPlayerTwo(7, tennisGame: tennisGame)
         
