@@ -1,4 +1,4 @@
-class TennisGame {
+class TennisGamePresenter {
     private let firstPlayer: Player
     private let secondPlayer: Player
     

@@ -2,7 +2,7 @@ import XCTest
 @testable import Tennis
 
 class TennisGameTests: XCTestCase {
-    private var tennisGame: TennisGame!
+    private var tennisGame: TennisGamePresenter!
     
     override func setUp() {
         tennisGame = buildTennisGame()
@@ -54,24 +54,24 @@ class TennisGameTests: XCTestCase {
         XCTAssertEqual(TestScores.SecondPlayerWon.rawValue,tennisGame.getPlayersScore())
     }
     
-    private func buildTennisGame() -> TennisGame {
+    private func buildTennisGame() -> TennisGamePresenter {
         let firstPlayer = buildPlayer("FirstPlayer")
         let secondPlayer = buildPlayer("SecondPlayer")
 
-        return TennisGame.init(firstPlayer, secondPlayer)
+        return TennisGamePresenter.init(firstPlayer, secondPlayer)
     }
     
     private func buildPlayer(_ playerName: String) -> Player {
         return try! Player.init(playerName)
     }
     
-    private func winConsequtivePointsForPlayerOne(_ numberOfTimes: Int, tennisGame: TennisGame) {
+    private func winConsequtivePointsForPlayerOne(_ numberOfTimes: Int, tennisGame: TennisGamePresenter) {
         for _ in 1 ... numberOfTimes {
             tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
         }
     }
     
-    private func winConsequtivePointsForPlayerTwo(_ numberOfTimes: Int, tennisGame: TennisGame) {
+    private func winConsequtivePointsForPlayerTwo(_ numberOfTimes: Int, tennisGame: TennisGamePresenter) {
         for _ in 1 ... numberOfTimes {
             tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
         }
