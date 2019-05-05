@@ -7,10 +7,18 @@ class Player {
         playerName = name
     }
     
+    func addScore() {
+        score += 1
+    }
+    
     func getScore() -> Points {
         switch score {
         case 0:
             return Points.Love
+        case 1:
+            return Points.Fifteen
+        case 2:
+            return Points.Thirty
         default:
             return Points.Fourty
         }

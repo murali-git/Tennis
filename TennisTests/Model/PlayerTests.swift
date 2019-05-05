@@ -14,4 +14,12 @@ class PlayerTests: XCTestCase {
         
         XCTAssertEqual(Points.Love, firstPlayer.getScore())
     }
+    
+    func test_ShouldReturnFifteenScore_WhenPlayerScoreIsUpdated() {
+        let firstPlayer = try! Player.init("FirstPlayer")
+        
+        firstPlayer.addScore()
+        
+        XCTAssertEqual(Points.Fifteen, firstPlayer.getScore())
+    }
 }
