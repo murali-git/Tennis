@@ -32,10 +32,6 @@ class Player {
         }
     }
     
-    func isPlayerScoreLessThanForty() -> Bool{
-        return score <= 3
-    }
-    
     func isPlayerScoreGreaterThanOrEqualToForty() -> Bool{
         return score >= 3
     }
