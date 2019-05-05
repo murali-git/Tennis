@@ -17,6 +17,16 @@ class TennisGameTests: XCTestCase {
         XCTAssertEqual("Fifteen-Love",tennisGame.getPlayersScore())
     }
     
+    func test_ShouldReturnFifteenThirty_WhenSecondPlayerScoresTwoPoint() {
+        let tennisGame = buildTennisGame()
+        
+        tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
+        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
+        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
+        
+        XCTAssertEqual("Fifteen-Thirty",tennisGame.getPlayersScore())
+    }
+    
     private func buildTennisGame() -> TennisGame {
         let firstPlayer = buildPlayer("FirstPlayer")
         let secondPlayer = buildPlayer("SecondPlayer")
