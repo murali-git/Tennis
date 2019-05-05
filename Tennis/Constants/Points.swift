@@ -1,6 +1,8 @@
-enum Points: Int {
-    case Love
-    case Fifteen
-    case Thirty
-    case Fourty
+enum Points: String {
+    case Love = "Love"
+    case Fifteen = "Fifteen"
+    case Thirty = "Thirty"
+    case Fourty = "Fourty"
+    case Deuce = "Deuce"
+    case Advantage = "Advantage"
 }

@@ -11,16 +11,16 @@ class Player {
         score += 1
     }
     
-    func getScore() -> Points {
+    func getScore() -> String {
         switch score {
         case 0:
-            return Points.Love
+            return Points.Love.rawValue
         case 1:
-            return Points.Fifteen
+            return Points.Fifteen.rawValue
         case 2:
-            return Points.Thirty
+            return Points.Thirty.rawValue
         default:
-            return Points.Fourty
+            return Points.Fourty.rawValue
         }
     }
     

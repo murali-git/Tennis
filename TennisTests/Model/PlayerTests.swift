@@ -12,7 +12,7 @@ class PlayerTests: XCTestCase {
     func test_ShouldReturnLoveScore_WhenPlayerIsInitializedWithDefaultValues() {
         let firstPlayer = try! Player.init("FirstPlayer")
         
-        XCTAssertEqual(Points.Love, firstPlayer.getScore())
+        XCTAssertEqual(Points.Love.rawValue, firstPlayer.getScore())
     }
     
     func test_ShouldReturnFifteenScore_WhenPlayerScoreIsUpdated() {
@@ -20,6 +20,6 @@ class PlayerTests: XCTestCase {
         
         firstPlayer.addScore()
         
-        XCTAssertEqual(Points.Fifteen, firstPlayer.getScore())
+        XCTAssertEqual(Points.Fifteen.rawValue, firstPlayer.getScore())
     }
 }
