@@ -8,10 +8,14 @@ class TennisGame {
     }
     
     func getPlayersScore() -> String {
-        if(firstPlayer.getScore() == secondPlayer.getScore()) {
+        if(isPlayerScoresEqual()) {
             return firstPlayer.getScore() + TennisConstant.All.rawValue
         }
         
         return TennisConstant.Empty.rawValue
+    }
+    
+    private func isPlayerScoresEqual() -> Bool {
+        return firstPlayer.getScore() == secondPlayer.getScore()
     }
 }
