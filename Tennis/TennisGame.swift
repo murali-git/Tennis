@@ -18,56 +18,63 @@ class TennisGame {
     
     func getPlayersScore() -> String {
         if(isAdvantage()) {
-            return TennisConstant.Advantage.rawValue + " " + currentPlayerName()
+            return TennisConstant.Advantage.rawValue + " " + highestScorePlayerName()
         }
         
         if(isDeuce()) {
             return TennisConstant.Deuce.rawValue
         }
         
-        if(isPlayerScoresEqual()) {
+        if(isPlayersScoresEqual()) {
             return firstPlayer.translateScore() + " " + TennisConstant.All.rawValue
         }
 
         return firstPlayer.translateScore() + " - " + secondPlayer.translateScore()
     }
     
+    // MARK: Tennis Game scenarios
     private func isAdvantage() -> Bool {
-        return isBothPlayerScoreGreaterThanEqualToFourty() && isPointDifferenceIsOne()
+        return isBothPlayerScoreGreaterThanOrEqualToFourty() && isPointDifferenceIsOne()
     }
     
     private func isDeuce() -> Bool{
-        return isPlayerScoresEqual() && isBothPlayerScoreGreaterThanEqualToFourty()
+        return isPlayersScoresEqual() && isBothPlayerScoreGreaterThanOrEqualToFourty()
     }
     
-    private func isPlayerScoresEqual() -> Bool {
+    private func isPlayersScoresEqual() -> Bool {
         return firstPlayer.getScore() == secondPlayer.getScore()
     }
 
     // MARK: Helper Methods for tennis score scenarios
     private func isPointDifferenceIsOne() -> Bool {
-        if isFirstPlayerHasGreaterScore() {
-            return firstPlayer.getScore() - secondPlayer.getScore() == 1
+        if hasFirstPlayerGotHighestScore() {
+            return hasFirstPlayerTakenAdvantage()
         }
-        else {
-            return secondPlayer.getScore() - firstPlayer.getScore() == 1
-        }
+        
+        return hasSecondPlayerTakenAdvantage()
     }
     
-    private func isFirstPlayerHasGreaterScore() -> Bool {
+    private func hasFirstPlayerTakenAdvantage() -> Bool {
+        return firstPlayer.getScore() - secondPlayer.getScore() == 1
+    }
+    
+    private func hasSecondPlayerTakenAdvantage() -> Bool {
+        return secondPlayer.getScore() - firstPlayer.getScore() == 1
+    }
+
+    private func hasFirstPlayerGotHighestScore() -> Bool {
         return firstPlayer.getScore() > secondPlayer.getScore()
     }
     
-    private func currentPlayerName() -> String {
-        if isFirstPlayerHasGreaterScore() {
+    private func highestScorePlayerName() -> String {
+        if hasFirstPlayerGotHighestScore() {
             return firstPlayer.name()
         }
-        else {
-            return secondPlayer.name()
-        }
+        
+        return secondPlayer.name()
     }
     
-    private func isBothPlayerScoreGreaterThanEqualToFourty() -> Bool{
+    private func isBothPlayerScoreGreaterThanOrEqualToFourty() -> Bool{
         return firstPlayer.isPlayerScoreGreaterThanOrEqualToForty() && secondPlayer.isPlayerScoreGreaterThanOrEqualToForty()
     }
 }
