@@ -17,27 +17,27 @@ class TennisGame {
     }
     
     func getPlayersScore() -> String {
-        if hasAnyPlayerWon() {
-            return highestScorePlayerName() + " " + TennisConstant.Won.rawValue
+        if isWinner() {
+            return highestScorePlayerName() + " " + TennisStatus.Won.rawValue
         }
         
         if isAdvantage() {
-            return TennisConstant.Advantage.rawValue + " " + highestScorePlayerName()
+            return TennisStatus.Advantage.rawValue + " " + highestScorePlayerName()
         }
         
         if isDeuce() {
-            return TennisConstant.Deuce.rawValue
+            return TennisStatus.Deuce.rawValue
         }
         
         if isPlayersScoresEqual() {
-            return firstPlayer.translateScore() + " " + TennisConstant.All.rawValue
+            return firstPlayer.translateScore() + " " + TennisStatus.All.rawValue
         }
 
         return firstPlayer.translateScore() + " - " + secondPlayer.translateScore()
     }
     
     // MARK: Tennis Game scenarios
-    private func hasAnyPlayerWon() -> Bool {
+    private func isWinner() -> Bool {
         return isBothPlayerScoreGreaterThanOrEqualToFourty() && isPointDifferenceMoreThanOne()
     }
     

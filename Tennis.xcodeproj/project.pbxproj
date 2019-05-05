@@ -15,7 +15,7 @@
 		6A34F349227F40FD000FFB38 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F348227F40FD000FFB38 /* Points.swift */; };
 		6A34F34B227F42A8000FFB38 /* TennisGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F34A227F42A8000FFB38 /* TennisGame.swift */; };
 		6A34F34D227F478F000FFB38 /* TennisGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F34C227F478F000FFB38 /* TennisGameTests.swift */; };
-		6A34F34F227F4BE1000FFB38 /* TennisConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F34E227F4BE1000FFB38 /* TennisConstant.swift */; };
+		6A34F34F227F4BE1000FFB38 /* TennisStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F34E227F4BE1000FFB38 /* TennisStatus.swift */; };
 		6A34F351227F5637000FFB38 /* CurrentPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F350227F5637000FFB38 /* CurrentPlayer.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		6A34F348227F40FD000FFB38 /* Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
 		6A34F34A227F42A8000FFB38 /* TennisGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisGame.swift; sourceTree = "<group>"; };
 		6A34F34C227F478F000FFB38 /* TennisGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisGameTests.swift; sourceTree = "<group>"; };
-		6A34F34E227F4BE1000FFB38 /* TennisConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisConstant.swift; sourceTree = "<group>"; };
+		6A34F34E227F4BE1000FFB38 /* TennisStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisStatus.swift; sourceTree = "<group>"; };
 		6A34F350227F5637000FFB38 /* CurrentPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				6A34F348227F40FD000FFB38 /* Points.swift */,
-				6A34F34E227F4BE1000FFB38 /* TennisConstant.swift */,
+				6A34F34E227F4BE1000FFB38 /* TennisStatus.swift */,
 				6A34F350227F5637000FFB38 /* CurrentPlayer.swift */,
 			);
 			path = Constants;
@@ -242,7 +242,7 @@
 				6A34F351227F5637000FFB38 /* CurrentPlayer.swift in Sources */,
 				6A34F34B227F42A8000FFB38 /* TennisGame.swift in Sources */,
 				6A34F349227F40FD000FFB38 /* Points.swift in Sources */,
-				6A34F34F227F4BE1000FFB38 /* TennisConstant.swift in Sources */,
+				6A34F34F227F4BE1000FFB38 /* TennisStatus.swift in Sources */,
 				6A34F340227F20B5000FFB38 /* Player.swift in Sources */,
 				6A34F31F227F0CD5000FFB38 /* AppDelegate.swift in Sources */,
 				6A34F346227F2B2F000FFB38 /* TennisError.swift in Sources */,
