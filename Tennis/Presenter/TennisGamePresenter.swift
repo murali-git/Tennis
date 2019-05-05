@@ -7,7 +7,7 @@ class TennisGamePresenter {
         self.secondPlayer = secondPlayer
     }
     
-    func playerWinsThePoint(_ currentPlayer: CurrentPlayer) {
+    func scoresPoint(_ currentPlayer: CurrentPlayer) {
         switch currentPlayer {
         case .FirstPlayer:
             firstPlayer.addScore()
@@ -38,7 +38,7 @@ class TennisGamePresenter {
     
     // MARK: Tennis Game scenarios
     private func isWinner() -> Bool {
-        return isBothPlayerScoreGreaterThanOrEqualToFourty() && isPointDifferenceMoreThanOne()
+        return isAnyPlayerScoreGreaterThanOrEqualToFourty() && isPointDifferenceMoreThanOne()
     }
     
     private func isAdvantage() -> Bool {
@@ -76,5 +76,9 @@ class TennisGamePresenter {
     
     private func isBothPlayerScoreGreaterThanOrEqualToFourty() -> Bool{
         return firstPlayer.isPlayerScoreGreaterThanOrEqualToForty() && secondPlayer.isPlayerScoreGreaterThanOrEqualToForty()
+    }
+    
+    private func isAnyPlayerScoreGreaterThanOrEqualToFourty() -> Bool {
+        return firstPlayer.isPlayerScoreGreaterThanForty() || secondPlayer.isPlayerScoreGreaterThanForty()
     }
 }

@@ -14,13 +14,13 @@ class TennisGameTests: XCTestCase {
     }
     
     func test_ShouldReturnFifteenLove_WhenFirstPlayerTakesThePoint() {
-        tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
+        tennisGame.scoresPoint(CurrentPlayer.FirstPlayer)
         
         XCTAssertEqual(TestScores.FifteenLove.rawValue,tennisGame.getPlayersScore())
     }
     
     func test_ShouldReturnFifteenThirty_WhenSecondPlayerScoresTwoPoint() {
-        tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
+        tennisGame.scoresPoint(CurrentPlayer.FirstPlayer)
         self.winConsequtivePointsForPlayerTwo(2, tennisGame: tennisGame)
         
         XCTAssertEqual(TestScores.FifteenThirty.rawValue,tennisGame.getPlayersScore())
@@ -67,13 +67,13 @@ class TennisGameTests: XCTestCase {
     
     private func winConsequtivePointsForPlayerOne(_ numberOfTimes: Int, tennisGame: TennisGamePresenter) {
         for _ in 1 ... numberOfTimes {
-            tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
+            tennisGame.scoresPoint(CurrentPlayer.FirstPlayer)
         }
     }
     
     private func winConsequtivePointsForPlayerTwo(_ numberOfTimes: Int, tennisGame: TennisGamePresenter) {
         for _ in 1 ... numberOfTimes {
-            tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
+            tennisGame.scoresPoint(CurrentPlayer.SecondPlayer)
         }
     }
 

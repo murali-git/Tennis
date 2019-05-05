@@ -10,13 +10,18 @@ class TennisViewController: UIViewController {
         buildTennisGame()
     }
     
+    @IBAction func reset(_ sender: Any) {
+        buildTennisGame()
+        updateScore("Score Status")
+    }
+    
     @IBAction func playerOneWins(_ sender: Any) {
-        tennisGamePresenter.playerWinsThePoint(.FirstPlayer)
+        tennisGamePresenter.scoresPoint(.FirstPlayer)
         updateScore(tennisGamePresenter.getPlayersScore())
     }
     
     @IBAction func playerTwoWins(_ sender: Any) {
-        tennisGamePresenter.playerWinsThePoint(.SecondPlayer)
+        tennisGamePresenter.scoresPoint(.SecondPlayer)
         updateScore(tennisGamePresenter.getPlayersScore())
     }
     
@@ -28,7 +33,7 @@ class TennisViewController: UIViewController {
             self.tennisGamePresenter = TennisGamePresenter.init(firstPlayer, secondPlayer)
         }
         catch {
-            updateScore("Exception in creating Tennis Presnter Class")
+            updateScore("Exception. Please contact helpdesk")
         }
     }
     

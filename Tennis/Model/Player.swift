@@ -36,6 +36,10 @@ class Player {
         return score >= 3
     }
     
+    func isPlayerScoreGreaterThanForty() -> Bool{
+        return score > 3
+    }
+    
     private func throwErrorWhenPlayerNameIsInitializedWithEmpty(_ name: String) throws {
         guard name.count > 0 else {
             throw TennisError.PlayerNameCannotBeEmpty
