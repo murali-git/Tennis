@@ -33,10 +33,6 @@ class TennisGame {
     }
     
     private func isBothPlayerScoreLessThanEqualToFourty() -> Bool{
-        return isPlayerScoreLessThanForty(firstPlayer) && isPlayerScoreLessThanForty(secondPlayer)
-    }
-    
-    private func isPlayerScoreLessThanForty(_ player: Player) -> Bool{
-        return player.getScore() <= 3
+        return firstPlayer.isPlayerScoreLessThanForty() && secondPlayer.isPlayerScoreLessThanForty()
     }
 }
