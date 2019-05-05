@@ -6,7 +6,7 @@ class TennisGameTests: XCTestCase {
     func test_ShouldReturnLoveAll_WhenTennisGameIsInitialized() {
         let tennisGame = buildTennisGame()
         
-        XCTAssertEqual("LoveAll",tennisGame.getPlayersScore())
+        XCTAssertEqual("Love All",tennisGame.getPlayersScore())
     }
     
     func test_ShouldReturnFifteenLove_WhenFirstPlayerTakesThePoint() {
@@ -14,7 +14,7 @@ class TennisGameTests: XCTestCase {
         
         tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
         
-        XCTAssertEqual("Fifteen-Love",tennisGame.getPlayersScore())
+        XCTAssertEqual("Fifteen - Love",tennisGame.getPlayersScore())
     }
     
     func test_ShouldReturnFifteenThirty_WhenSecondPlayerScoresTwoPoint() {
@@ -24,7 +24,22 @@ class TennisGameTests: XCTestCase {
         tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
         tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
         
-        XCTAssertEqual("Fifteen-Thirty",tennisGame.getPlayersScore())
+        XCTAssertEqual("Fifteen - Thirty",tennisGame.getPlayersScore())
+    }
+    
+    func test_ShouldReturnDeuce_WhenBothPlayerScoresSameScoreAndMoreThanOrEqualToFourty() {
+        let tennisGame = buildTennisGame()
+        
+        tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
+        tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
+        tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
+        tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
+        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
+        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
+        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
+        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
+        
+        XCTAssertEqual("Deuce",tennisGame.getPlayersScore())
     }
     
     private func buildTennisGame() -> TennisGame {

@@ -17,22 +17,26 @@ class TennisGame {
     }
     
     func getPlayersScore() -> String {
+        if(isDeuce()) {
+            return TennisConstant.Deuce.rawValue
+        }
+        
         if(isPlayerScoresEqual()) {
-            return firstPlayer.translateScore() + TennisConstant.All.rawValue
+            return firstPlayer.translateScore() + " " + TennisConstant.All.rawValue
         }
-        
-        if(isBothPlayerScoreLessThanEqualToFourty()) {
-            return firstPlayer.translateScore() + "-" + secondPlayer.translateScore()
-        }
-        
-        return TennisConstant.Empty.rawValue
+
+        return firstPlayer.translateScore() + " - " + secondPlayer.translateScore()
     }
     
     private func isPlayerScoresEqual() -> Bool {
         return firstPlayer.getScore() == secondPlayer.getScore()
     }
     
-    private func isBothPlayerScoreLessThanEqualToFourty() -> Bool{
-        return firstPlayer.isPlayerScoreLessThanForty() && secondPlayer.isPlayerScoreLessThanForty()
+    private func isBothPlayerScoreGreaterThanEqualToFourty() -> Bool{
+        return firstPlayer.isPlayerScoreGreaterThanOrEqualToForty() && secondPlayer.isPlayerScoreGreaterThanOrEqualToForty()
+    }
+    
+    private func isDeuce() -> Bool{
+        return isPlayerScoresEqual() && isBothPlayerScoreGreaterThanEqualToFourty()
     }
 }
