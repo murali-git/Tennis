@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TennisViewController" customModule="Tennis" customModuleProvider="target">
             <connections>
+                <outlet property="scoreLabel" destination="FmY-TJ-t7x" id="gMs-du-56D"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,8 +20,75 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCo-fb-gS4">
+                    <rect key="frame" x="263" y="170" width="62" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="Ybz-gF-qNh"/>
+                        <constraint firstAttribute="height" constant="21" id="fMZ-F0-1ik"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5v-9J-uNx">
+                    <rect key="frame" x="39.5" y="211" width="80" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="RiM-4j-HCD"/>
+                        <constraint firstAttribute="height" constant="30" id="nTd-pe-fsl"/>
+                    </constraints>
+                    <state key="normal" title="Wins"/>
+                    <connections>
+                        <action selector="playerOneWins:" destination="-1" eventType="touchUpInside" id="hoF-a6-0O5"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKb-Fj-gX7">
+                    <rect key="frame" x="254" y="211" width="80" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="GYF-hI-zwJ"/>
+                        <constraint firstAttribute="width" constant="80" id="Qvn-8w-dHk"/>
+                    </constraints>
+                    <state key="normal" title="Wins"/>
+                    <connections>
+                        <action selector="playerTwoWins:" destination="-1" eventType="touchUpInside" id="ofb-Mb-u18"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmY-TJ-t7x">
+                    <rect key="frame" x="18" y="301" width="339" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="81y-pG-2vo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS1-6Z-mIr">
+                    <rect key="frame" x="50" y="170" width="59" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="7x4-dW-PEr"/>
+                        <constraint firstAttribute="width" constant="59" id="sEN-H3-XlN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="YKb-Fj-gX7" firstAttribute="centerX" secondItem="DCo-fb-gS4" secondAttribute="centerX" id="Auy-Pa-28R"/>
+                <constraint firstItem="PS1-6Z-mIr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="RN2-tP-X5I"/>
+                <constraint firstItem="PS1-6Z-mIr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="WvN-75-n4w"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FmY-TJ-t7x" secondAttribute="trailing" constant="18" id="X0z-ze-PCD"/>
+                <constraint firstItem="z5v-9J-uNx" firstAttribute="top" secondItem="PS1-6Z-mIr" secondAttribute="bottom" constant="20" id="YRw-wk-AaR"/>
+                <constraint firstItem="FmY-TJ-t7x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="Za1-jL-lF3"/>
+                <constraint firstItem="z5v-9J-uNx" firstAttribute="centerX" secondItem="PS1-6Z-mIr" secondAttribute="centerX" id="ZyE-vN-ILz"/>
+                <constraint firstItem="YKb-Fj-gX7" firstAttribute="top" secondItem="DCo-fb-gS4" secondAttribute="bottom" constant="20" id="dti-q2-SYy"/>
+                <constraint firstItem="DCo-fb-gS4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="edO-iZ-oOc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DCo-fb-gS4" secondAttribute="trailing" constant="50" id="euX-bZ-pHT"/>
+                <constraint firstItem="FmY-TJ-t7x" firstAttribute="top" secondItem="z5v-9J-uNx" secondAttribute="bottom" constant="60" id="uTF-Jz-3Ap"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="55.200000000000003" y="48.125937031484263"/>
         </view>
     </objects>
 </document>
