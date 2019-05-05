@@ -16,6 +16,7 @@
 		6A34F34B227F42A8000FFB38 /* TennisGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F34A227F42A8000FFB38 /* TennisGame.swift */; };
 		6A34F34D227F478F000FFB38 /* TennisGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F34C227F478F000FFB38 /* TennisGameTests.swift */; };
 		6A34F34F227F4BE1000FFB38 /* TennisConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F34E227F4BE1000FFB38 /* TennisConstant.swift */; };
+		6A34F351227F5637000FFB38 /* CurrentPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F350227F5637000FFB38 /* CurrentPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		6A34F34A227F42A8000FFB38 /* TennisGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisGame.swift; sourceTree = "<group>"; };
 		6A34F34C227F478F000FFB38 /* TennisGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisGameTests.swift; sourceTree = "<group>"; };
 		6A34F34E227F4BE1000FFB38 /* TennisConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisConstant.swift; sourceTree = "<group>"; };
+		6A34F350227F5637000FFB38 /* CurrentPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				6A34F348227F40FD000FFB38 /* Points.swift */,
 				6A34F34E227F4BE1000FFB38 /* TennisConstant.swift */,
+				6A34F350227F5637000FFB38 /* CurrentPlayer.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A34F351227F5637000FFB38 /* CurrentPlayer.swift in Sources */,
 				6A34F34B227F42A8000FFB38 /* TennisGame.swift in Sources */,
 				6A34F349227F40FD000FFB38 /* Points.swift in Sources */,
 				6A34F34F227F4BE1000FFB38 /* TennisConstant.swift in Sources */,

@@ -1,8 +1,3 @@
-enum CurrentPlayer {
-    case FirstPlayer
-    case SecondPlayer
-}
-
 class TennisGame {
     private let firstPlayer: Player
     private let secondPlayer: Player
