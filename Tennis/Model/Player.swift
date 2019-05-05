@@ -1,10 +1,3 @@
-enum Points: Int {
-    case Love
-    case Fifteen
-    case Thirty
-    case Fourty
-}
-
 class Player {
     private var playerName: String! // Var and ! is used to check exception and then initialize
     private var score: Int = 0
