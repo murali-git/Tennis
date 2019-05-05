@@ -17,6 +17,8 @@
 		6A34F34D227F478F000FFB38 /* TennisGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F34C227F478F000FFB38 /* TennisGameTests.swift */; };
 		6A34F34F227F4BE1000FFB38 /* TennisStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F34E227F4BE1000FFB38 /* TennisStatus.swift */; };
 		6A34F351227F5637000FFB38 /* CurrentPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F350227F5637000FFB38 /* CurrentPlayer.swift */; };
+		6A34F358227F8F7E000FFB38 /* TennisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F356227F8F7E000FFB38 /* TennisViewController.swift */; };
+		6A34F359227F8F7E000FFB38 /* TennisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A34F357227F8F7E000FFB38 /* TennisViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		6A34F34C227F478F000FFB38 /* TennisGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisGameTests.swift; sourceTree = "<group>"; };
 		6A34F34E227F4BE1000FFB38 /* TennisStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisStatus.swift; sourceTree = "<group>"; };
 		6A34F350227F5637000FFB38 /* CurrentPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlayer.swift; sourceTree = "<group>"; };
+		6A34F356227F8F7E000FFB38 /* TennisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisViewController.swift; sourceTree = "<group>"; };
+		6A34F357227F8F7E000FFB38 /* TennisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TennisViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +91,9 @@
 			children = (
 				6A34F355227F8E9C000FFB38 /* ViewController */,
 				6A34F352227F8DF9000FFB38 /* Presenter */,
+				6A34F33E227F20A3000FFB38 /* Model */,
 				6A34F347227F40E3000FFB38 /* Constants */,
 				6A34F344227F2B17000FFB38 /* Errors */,
-				6A34F33E227F20A3000FFB38 /* Model */,
 				6A34F31E227F0CD5000FFB38 /* AppDelegate.swift */,
 				6A34F327227F0CD7000FFB38 /* LaunchScreen.storyboard */,
 				6A34F32A227F0CD7000FFB38 /* Info.plist */,
@@ -160,6 +164,8 @@
 		6A34F355227F8E9C000FFB38 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6A34F356227F8F7E000FFB38 /* TennisViewController.swift */,
+				6A34F357227F8F7E000FFB38 /* TennisViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A34F359227F8F7E000FFB38 /* TennisViewController.xib in Resources */,
 				6A34F329227F0CD7000FFB38 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A34F358227F8F7E000FFB38 /* TennisViewController.swift in Sources */,
 				6A34F351227F5637000FFB38 /* CurrentPlayer.swift in Sources */,
 				6A34F34B227F42A8000FFB38 /* TennisGamePresenter.swift in Sources */,
 				6A34F349227F40FD000FFB38 /* Points.swift in Sources */,
