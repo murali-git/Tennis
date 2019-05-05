@@ -9,6 +9,12 @@ class PlayerTests: XCTestCase {
         }
     }
     
+    func test_ShouldReturnName_WhenPlayerNameIsSet() {
+        let firstPlayer = try! Player.init("FirstPlayer")
+        
+        XCTAssertEqual("FirstPlayer", firstPlayer.name())
+    }
+    
     func test_ShouldReturnLoveScore_WhenPlayerIsInitializedWithDefaultValues() {
         let firstPlayer = try! Player.init("FirstPlayer")
         
