@@ -8,4 +8,10 @@ class PlayerTests: XCTestCase {
             XCTAssertEqual(error as? TennisError, TennisError.PlayerNameCannotBeEmpty)
         }
     }
+    
+    func test_ShouldReturnLoveScore_WhenPlayerIsInitializedWithDefaultValues() {
+        let firstPlayer = try! Player.init("FirstPlayer")
+        
+        XCTAssertEqual(Points.Love, firstPlayer.getScore())
+    }
 }
