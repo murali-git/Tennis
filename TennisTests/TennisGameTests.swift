@@ -21,8 +21,7 @@ class TennisGameTests: XCTestCase {
         let tennisGame = buildTennisGame()
         
         tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
-        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
-        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
+        self.winConsequtivePointsForPlayerTwo(2, tennisGame: tennisGame)
         
         XCTAssertEqual("Fifteen - Thirty",tennisGame.getPlayersScore())
     }
@@ -30,16 +29,28 @@ class TennisGameTests: XCTestCase {
     func test_ShouldReturnDeuce_WhenBothPlayerScoresSameScoreAndMoreThanOrEqualToFourty() {
         let tennisGame = buildTennisGame()
         
-        tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
-        tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
-        tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
-        tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
-        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
-        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
-        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
-        tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
+        self.winConsequtivePointsForPlayerOne(3, tennisGame: tennisGame)
+        self.winConsequtivePointsForPlayerTwo(3, tennisGame: tennisGame)
         
         XCTAssertEqual("Deuce",tennisGame.getPlayersScore())
+    }
+    
+    func test_ShouldReturnAdvantageForPlayerOne_WhenPlayerScoresAdditionalPointAfterDeuce() {
+        let tennisGame = buildTennisGame()
+        
+        self.winConsequtivePointsForPlayerOne(4, tennisGame: tennisGame)
+        self.winConsequtivePointsForPlayerTwo(3, tennisGame: tennisGame)
+        
+        XCTAssertEqual("Advantage FirstPlayer",tennisGame.getPlayersScore())
+    }
+    
+    func test_ShouldReturnAdvantageForPlayerTwo_WhenPlayerScoresAdditionalPointAfterDeuce() {
+        let tennisGame = buildTennisGame()
+        
+        self.winConsequtivePointsForPlayerOne(5, tennisGame: tennisGame)
+        self.winConsequtivePointsForPlayerTwo(6, tennisGame: tennisGame)
+        
+        XCTAssertEqual("Advantage SecondPlayer",tennisGame.getPlayersScore())
     }
     
     private func buildTennisGame() -> TennisGame {
@@ -52,4 +63,17 @@ class TennisGameTests: XCTestCase {
     private func buildPlayer(_ playerName: String) -> Player {
         return try! Player.init(playerName)
     }
+    
+    private func winConsequtivePointsForPlayerOne(_ numberOfTimes: Int, tennisGame: TennisGame) {
+        for _ in 1 ... numberOfTimes {
+            tennisGame.playerWinsThePoint(CurrentPlayer.FirstPlayer)
+        }
+    }
+    
+    private func winConsequtivePointsForPlayerTwo(_ numberOfTimes: Int, tennisGame: TennisGame) {
+        for _ in 1 ... numberOfTimes {
+            tennisGame.playerWinsThePoint(CurrentPlayer.SecondPlayer)
+        }
+    }
+
 }

@@ -15,6 +15,10 @@ class Player {
         return score
     }
     
+    func name() -> String {
+        return playerName
+    }
+    
     func translateScore() -> String {
         switch score {
         case 0:

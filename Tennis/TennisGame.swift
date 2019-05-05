@@ -17,6 +17,10 @@ class TennisGame {
     }
     
     func getPlayersScore() -> String {
+        if(isAdvantage()) {
+            return TennisConstant.Advantage.rawValue + " " + currentPlayerName()
+        }
+        
         if(isDeuce()) {
             return TennisConstant.Deuce.rawValue
         }
@@ -28,15 +32,42 @@ class TennisGame {
         return firstPlayer.translateScore() + " - " + secondPlayer.translateScore()
     }
     
-    private func isPlayerScoresEqual() -> Bool {
-        return firstPlayer.getScore() == secondPlayer.getScore()
-    }
-    
-    private func isBothPlayerScoreGreaterThanEqualToFourty() -> Bool{
-        return firstPlayer.isPlayerScoreGreaterThanOrEqualToForty() && secondPlayer.isPlayerScoreGreaterThanOrEqualToForty()
+    private func isAdvantage() -> Bool {
+        return isBothPlayerScoreGreaterThanEqualToFourty() && isPointDifferenceIsOne()
     }
     
     private func isDeuce() -> Bool{
         return isPlayerScoresEqual() && isBothPlayerScoreGreaterThanEqualToFourty()
+    }
+    
+    private func isPlayerScoresEqual() -> Bool {
+        return firstPlayer.getScore() == secondPlayer.getScore()
+    }
+
+    // MARK: Helper Methods for tennis score scenarios
+    private func isPointDifferenceIsOne() -> Bool {
+        if isFirstPlayerHasGreaterScore() {
+            return firstPlayer.getScore() - secondPlayer.getScore() == 1
+        }
+        else {
+            return secondPlayer.getScore() - firstPlayer.getScore() == 1
+        }
+    }
+    
+    private func isFirstPlayerHasGreaterScore() -> Bool {
+        return firstPlayer.getScore() > secondPlayer.getScore()
+    }
+    
+    private func currentPlayerName() -> String {
+        if isFirstPlayerHasGreaterScore() {
+            return firstPlayer.name()
+        }
+        else {
+            return secondPlayer.name()
+        }
+    }
+    
+    private func isBothPlayerScoreGreaterThanEqualToFourty() -> Bool{
+        return firstPlayer.isPlayerScoreGreaterThanOrEqualToForty() && secondPlayer.isPlayerScoreGreaterThanOrEqualToForty()
     }
 }
