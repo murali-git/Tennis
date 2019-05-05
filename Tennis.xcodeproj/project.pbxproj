@@ -98,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				6A34F341227F2319000FFB38 /* Model */,
-				6A34F335227F0CD7000FFB38 /* Info.plist */,
 				6A34F34C227F478F000FFB38 /* TennisGameTests.swift */,
+				6A34F335227F0CD7000FFB38 /* Info.plist */,
 			);
 			path = TennisTests;
 			sourceTree = "<group>";
