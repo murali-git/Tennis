@@ -33,6 +33,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5v-9J-uNx">
                     <rect key="frame" x="39.5" y="211" width="80" height="30"/>
+                    <accessibility key="accessibilityConfiguration" identifier="player1Scores"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="RiM-4j-HCD"/>
                         <constraint firstAttribute="height" constant="30" id="nTd-pe-fsl"/>
@@ -44,6 +45,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKb-Fj-gX7">
                     <rect key="frame" x="254" y="211" width="80" height="30"/>
+                    <accessibility key="accessibilityConfiguration" identifier="player2Scores"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="GYF-hI-zwJ"/>
                         <constraint firstAttribute="width" constant="80" id="Qvn-8w-dHk"/>
@@ -55,6 +57,7 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmY-TJ-t7x">
                     <rect key="frame" x="18" y="301" width="339" height="21"/>
+                    <accessibility key="accessibilityConfiguration" identifier="Points"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="81y-pG-2vo"/>
                     </constraints>
