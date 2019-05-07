@@ -1,6 +1,7 @@
 class TennisGamePresenter {
     private let firstPlayer: Player
     private let secondPlayer: Player
+    private let unowned tennisGameView:
     
     init(_ firstPlayer: Player,_ secondPlayer: Player) {
         self.firstPlayer = firstPlayer
@@ -38,11 +39,11 @@ class TennisGamePresenter {
     
     // MARK: Tennis Game scenarios
     private func isWinner() -> Bool {
-        return isAnyPlayerScoreGreaterThanOrEqualToFourty() && isPointDifferenceMoreThanOne()
+        return isAnyPlayerScoreGreaterThanFourty() && isPointDifferenceMoreThanOne()
     }
     
     private func isAdvantage() -> Bool {
-        return isBothPlayerScoreGreaterThanOrEqualToFourty() && isPointDifferenceIsOne()
+        return isBothPlayerScoreGreaterThanOrEqualToFourty() && isPointDifferenceIsEqualToOne()
     }
     
     private func isDeuce() -> Bool{
@@ -58,7 +59,7 @@ class TennisGamePresenter {
         return abs(firstPlayer.currentScore() - secondPlayer.currentScore()) > 1
     }
     
-    private func isPointDifferenceIsOne() -> Bool {
+    private func isPointDifferenceIsEqualToOne() -> Bool {
         return abs(firstPlayer.currentScore() - secondPlayer.currentScore()) == 1
     }
     
@@ -78,7 +79,7 @@ class TennisGamePresenter {
         return firstPlayer.isPlayerScoreGreaterThanOrEqualToForty() && secondPlayer.isPlayerScoreGreaterThanOrEqualToForty()
     }
     
-    private func isAnyPlayerScoreGreaterThanOrEqualToFourty() -> Bool {
+    private func isAnyPlayerScoreGreaterThanFourty() -> Bool {
         return firstPlayer.isPlayerScoreGreaterThanForty() || secondPlayer.isPlayerScoreGreaterThanForty()
     }
 }

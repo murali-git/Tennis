@@ -19,6 +19,7 @@
 		6A34F351227F5637000FFB38 /* CurrentPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F350227F5637000FFB38 /* CurrentPlayer.swift */; };
 		6A34F358227F8F7E000FFB38 /* TennisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F356227F8F7E000FFB38 /* TennisViewController.swift */; };
 		6A34F359227F8F7E000FFB38 /* TennisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A34F357227F8F7E000FFB38 /* TennisViewController.xib */; };
+		6AE2950E2281E70700DCDCEA /* TennisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2950D2281E70700DCDCEA /* TennisView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		6A34F350227F5637000FFB38 /* CurrentPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlayer.swift; sourceTree = "<group>"; };
 		6A34F356227F8F7E000FFB38 /* TennisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisViewController.swift; sourceTree = "<group>"; };
 		6A34F357227F8F7E000FFB38 /* TennisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TennisViewController.xib; sourceTree = "<group>"; };
+		6AE2950D2281E70700DCDCEA /* TennisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			children = (
 				6A34F356227F8F7E000FFB38 /* TennisViewController.swift */,
 				6A34F357227F8F7E000FFB38 /* TennisViewController.xib */,
+				6AE2950D2281E70700DCDCEA /* TennisView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A34F358227F8F7E000FFB38 /* TennisViewController.swift in Sources */,
+				6AE2950E2281E70700DCDCEA /* TennisView.swift in Sources */,
 				6A34F351227F5637000FFB38 /* CurrentPlayer.swift in Sources */,
 				6A34F34B227F42A8000FFB38 /* TennisGamePresenter.swift in Sources */,
 				6A34F349227F40FD000FFB38 /* Points.swift in Sources */,
