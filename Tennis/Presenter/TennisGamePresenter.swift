@@ -64,11 +64,15 @@ class TennisGamePresenter {
     }
     
     private func highestScorePlayerName() -> String {
-        if firstPlayer.currentScore() > secondPlayer.currentScore() {
+        if hasFirstPlayerGotHighestScore() {
             return firstPlayer.name()
         }
         
         return secondPlayer.name()
+    }
+    
+    private func hasFirstPlayerGotHighestScore() -> Bool {
+        return firstPlayer.currentScore() > secondPlayer.currentScore()
     }
     
     private func isBothPlayerScoreGreaterThanOrEqualToFourty() -> Bool{
