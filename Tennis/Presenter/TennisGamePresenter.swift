@@ -1,11 +1,11 @@
 class TennisGamePresenter {
     private let firstPlayer: Player
     private let secondPlayer: Player
-    private let unowned tennisGameView:
     
     init(_ firstPlayer: Player,_ secondPlayer: Player) {
         self.firstPlayer = firstPlayer
         self.secondPlayer = secondPlayer
+        self.tennisGameView = tennisGameView
     }
     
     func scoresPoint(_ currentPlayer: CurrentPlayer) {
@@ -19,6 +19,7 @@ class TennisGamePresenter {
     
     func getPlayersScore() -> String {
         if isWinner() {
+            
             return highestScorePlayerName() + " " + TennisStatus.Won.rawValue
         }
         
