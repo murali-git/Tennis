@@ -42,7 +42,7 @@ class TennisGamePresenter {
         return firstPlayer.translateScore() + " - " + secondPlayer.translateScore()
     }
     
-    // MARK: Tennis Game scenarios
+    // MARK: Helper Methods
     private func isWinner() -> Bool {
         return (firstPlayer.isPlayerScoreGreaterThanForty() || secondPlayer.isPlayerScoreGreaterThanForty()) && (pointDifferenceBetweenPlayers() > 1)
     }
@@ -58,8 +58,7 @@ class TennisGamePresenter {
     private func isPlayersScoresEqual() -> Bool {
         return firstPlayer.currentScore() == secondPlayer.currentScore()
     }
-
-    // MARK: Helper Methods for tennis score scenarios
+    
     private func pointDifferenceBetweenPlayers() -> Int {
         return abs(firstPlayer.currentScore() - secondPlayer.currentScore())
     }
