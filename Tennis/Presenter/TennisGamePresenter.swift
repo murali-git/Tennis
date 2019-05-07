@@ -44,7 +44,7 @@ class TennisGamePresenter {
     
     // MARK: Tennis Game scenarios
     private func isWinner() -> Bool {
-        return isAnyPlayerScoreGreaterThanFourty() && isPointDifferenceMoreThanOne()
+        return (firstPlayer.isPlayerScoreGreaterThanForty() || secondPlayer.isPlayerScoreGreaterThanForty()) && isPointDifferenceMoreThanOne()
     }
     
     private func isAdvantage() -> Bool {
@@ -78,9 +78,5 @@ class TennisGamePresenter {
     
     private func isBothPlayerScoreGreaterThanOrEqualToFourty() -> Bool{
         return firstPlayer.isPlayerScoreGreaterThanOrEqualToForty() && secondPlayer.isPlayerScoreGreaterThanOrEqualToForty()
-    }
-    
-    private func isAnyPlayerScoreGreaterThanFourty() -> Bool {
-        return firstPlayer.isPlayerScoreGreaterThanForty() || secondPlayer.isPlayerScoreGreaterThanForty()
     }
 }
