@@ -44,11 +44,11 @@ class TennisGamePresenter {
     
     // MARK: Tennis Game scenarios
     private func isWinner() -> Bool {
-        return (firstPlayer.isPlayerScoreGreaterThanForty() || secondPlayer.isPlayerScoreGreaterThanForty()) && isPointDifferenceMoreThanOne()
+        return (firstPlayer.isPlayerScoreGreaterThanForty() || secondPlayer.isPlayerScoreGreaterThanForty()) && (pointDifferenceBetweenPlayers() > 1)
     }
     
     private func isAdvantage() -> Bool {
-        return isBothPlayerScoreGreaterThanOrEqualToFourty() && isPointDifferenceIsEqualToOne()
+        return isBothPlayerScoreGreaterThanOrEqualToFourty() && (pointDifferenceBetweenPlayers() == 1)
     }
     
     private func isDeuce() -> Bool{
@@ -60,12 +60,8 @@ class TennisGamePresenter {
     }
 
     // MARK: Helper Methods for tennis score scenarios
-    private func isPointDifferenceMoreThanOne() -> Bool {
-        return abs(firstPlayer.currentScore() - secondPlayer.currentScore()) > 1
-    }
-    
-    private func isPointDifferenceIsEqualToOne() -> Bool {
-        return abs(firstPlayer.currentScore() - secondPlayer.currentScore()) == 1
+    private func pointDifferenceBetweenPlayers() -> Int {
+        return abs(firstPlayer.currentScore() - secondPlayer.currentScore())
     }
     
     private func highestScorePlayerName() -> String {
