@@ -10,9 +10,9 @@ class TennisGamePresenter {
     func scoresPoint(_ currentPlayer: CurrentPlayer) {
         switch currentPlayer {
         case .FirstPlayer:
-            firstPlayer.addScore()
+            firstPlayer.updateScore()
         case .SecondPlayer:
-            secondPlayer.addScore()
+            secondPlayer.updateScore()
         }
     }
     

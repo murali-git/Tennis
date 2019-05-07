@@ -24,7 +24,7 @@ class PlayerTests: XCTestCase {
     func test_ShouldReturnFifteenScore_WhenPlayerScoreIsUpdated() {
         let firstPlayer = try! Player.init("FirstPlayer")
         
-        firstPlayer.addScore()
+        firstPlayer.updateScore()
         
         XCTAssertEqual(Points.Fifteen.rawValue, firstPlayer.translateScore())
     }
