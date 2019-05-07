@@ -13,7 +13,7 @@ class Player {
         score += 1
     }
     
-    func getScore() -> Int {
+    func currentScore() -> Int {
         return score
     }
     

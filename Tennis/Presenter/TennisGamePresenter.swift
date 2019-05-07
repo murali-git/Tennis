@@ -50,16 +50,16 @@ class TennisGamePresenter {
     }
     
     private func isPlayersScoresEqual() -> Bool {
-        return firstPlayer.getScore() == secondPlayer.getScore()
+        return firstPlayer.currentScore() == secondPlayer.currentScore()
     }
 
     // MARK: Helper Methods for tennis score scenarios
     private func isPointDifferenceMoreThanOne() -> Bool {
-        return abs(firstPlayer.getScore() - secondPlayer.getScore()) > 1
+        return abs(firstPlayer.currentScore() - secondPlayer.currentScore()) > 1
     }
     
     private func isPointDifferenceIsOne() -> Bool {
-        return abs(firstPlayer.getScore() - secondPlayer.getScore()) == 1
+        return abs(firstPlayer.currentScore() - secondPlayer.currentScore()) == 1
     }
     
     private func highestScorePlayerName() -> String {
@@ -71,7 +71,7 @@ class TennisGamePresenter {
     }
     
     private func hasFirstPlayerGotHighestScore() -> Bool {
-        return firstPlayer.getScore() > secondPlayer.getScore()
+        return firstPlayer.currentScore() > secondPlayer.currentScore()
     }
     
     private func isBothPlayerScoreGreaterThanOrEqualToFourty() -> Bool{
