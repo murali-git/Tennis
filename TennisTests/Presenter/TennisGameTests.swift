@@ -8,7 +8,7 @@ class TennisGameTests: XCTestCase {
         tennisGame = buildTennisGame()
     }
     
-    func test_ShouldReturnLoveAll_WhenTennisGameIsInitialized() {
+    func test_ShouldReturnLoveAll_WhenTennisGameIsStarted() {
 
         XCTAssertEqual(TestScores.LoveAll.rawValue,tennisGame.getPlayersScore())
     }
