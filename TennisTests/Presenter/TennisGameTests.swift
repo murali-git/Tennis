@@ -26,6 +26,13 @@ class TennisGameTests: XCTestCase {
         XCTAssertEqual(TestScores.FifteenThirty.rawValue,tennisGame.getPlayersScore())
     }
     
+    func test_ShouldReturnFourtyThirty_WhenFirstPlayerScoresThreePoints() {
+        self.winConsequtivePointsForPlayerOne(3, tennisGame: tennisGame)
+        self.winConsequtivePointsForPlayerTwo(2, tennisGame: tennisGame)
+        
+        XCTAssertEqual(TestScores.FourtyThirty.rawValue,tennisGame.getPlayersScore())
+    }
+    
     func test_ShouldReturnDeuce_WhenBothPlayerScoresSameScoreAndMoreThanOrEqualToFourty() {
         self.winConsequtivePointsForPlayerOne(3, tennisGame: tennisGame)
         self.winConsequtivePointsForPlayerTwo(3, tennisGame: tennisGame)
@@ -83,6 +90,7 @@ fileprivate enum TestScores: String {
     case LoveAll = "Love All"
     case FifteenLove = "Fifteen - Love"
     case FifteenThirty = "Fifteen - Thirty"
+    case FourtyThirty = "Fourty - Thirty"
     case Deuce = "Deuce"
     case FirstPlayerAdvantage = "Advantage FirstPlayer"
     case SecondPlayerAdvantage = "Advantage SecondPlayer"

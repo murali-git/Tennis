@@ -19,10 +19,18 @@
 		6A34F351227F5637000FFB38 /* CurrentPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F350227F5637000FFB38 /* CurrentPlayer.swift */; };
 		6A34F358227F8F7E000FFB38 /* TennisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F356227F8F7E000FFB38 /* TennisViewController.swift */; };
 		6A34F359227F8F7E000FFB38 /* TennisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A34F357227F8F7E000FFB38 /* TennisViewController.xib */; };
+		6A34F36122823182000FFB38 /* TennisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34F36022823182000FFB38 /* TennisUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		6A34F330227F0CD7000FFB38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A34F313227F0CD4000FFB38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A34F31A227F0CD4000FFB38;
+			remoteInfo = Tennis;
+		};
+		6A34F36322823182000FFB38 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6A34F313227F0CD4000FFB38 /* Project object */;
 			proxyType = 1;
@@ -48,6 +56,9 @@
 		6A34F350227F5637000FFB38 /* CurrentPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlayer.swift; sourceTree = "<group>"; };
 		6A34F356227F8F7E000FFB38 /* TennisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisViewController.swift; sourceTree = "<group>"; };
 		6A34F357227F8F7E000FFB38 /* TennisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TennisViewController.xib; sourceTree = "<group>"; };
+		6A34F35E22823182000FFB38 /* TennisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TennisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A34F36022823182000FFB38 /* TennisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisUITests.swift; sourceTree = "<group>"; };
+		6A34F36222823182000FFB38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +76,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6A34F35B22823182000FFB38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -73,6 +91,7 @@
 			children = (
 				6A34F31D227F0CD4000FFB38 /* Tennis */,
 				6A34F332227F0CD7000FFB38 /* TennisTests */,
+				6A34F35F22823182000FFB38 /* TennisUITests */,
 				6A34F31C227F0CD4000FFB38 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +101,7 @@
 			children = (
 				6A34F31B227F0CD4000FFB38 /* Tennis.app */,
 				6A34F32F227F0CD7000FFB38 /* TennisTests.xctest */,
+				6A34F35E22823182000FFB38 /* TennisUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +190,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		6A34F35F22823182000FFB38 /* TennisUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6A34F36022823182000FFB38 /* TennisUITests.swift */,
+				6A34F36222823182000FFB38 /* Info.plist */,
+			);
+			path = TennisUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,6 +237,24 @@
 			productReference = 6A34F32F227F0CD7000FFB38 /* TennisTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		6A34F35D22823182000FFB38 /* TennisUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A34F36722823182000FFB38 /* Build configuration list for PBXNativeTarget "TennisUITests" */;
+			buildPhases = (
+				6A34F35A22823182000FFB38 /* Sources */,
+				6A34F35B22823182000FFB38 /* Frameworks */,
+				6A34F35C22823182000FFB38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A34F36422823182000FFB38 /* PBXTargetDependency */,
+			);
+			name = TennisUITests;
+			productName = TennisUITests;
+			productReference = 6A34F35E22823182000FFB38 /* TennisUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -222,6 +269,10 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					6A34F32E227F0CD7000FFB38 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 6A34F31A227F0CD4000FFB38;
+					};
+					6A34F35D22823182000FFB38 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 6A34F31A227F0CD4000FFB38;
 					};
@@ -242,6 +293,7 @@
 			targets = (
 				6A34F31A227F0CD4000FFB38 /* Tennis */,
 				6A34F32E227F0CD7000FFB38 /* TennisTests */,
+				6A34F35D22823182000FFB38 /* TennisUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +309,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6A34F32D227F0CD7000FFB38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A34F35C22823182000FFB38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,6 +349,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6A34F35A22823182000FFB38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A34F36122823182000FFB38 /* TennisUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -297,6 +364,11 @@
 			isa = PBXTargetDependency;
 			target = 6A34F31A227F0CD4000FFB38 /* Tennis */;
 			targetProxy = 6A34F330227F0CD7000FFB38 /* PBXContainerItemProxy */;
+		};
+		6A34F36422823182000FFB38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A34F31A227F0CD4000FFB38 /* Tennis */;
+			targetProxy = 6A34F36322823182000FFB38 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -508,6 +580,42 @@
 			};
 			name = Release;
 		};
+		6A34F36522823182000FFB38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TennisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.murali.TennisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tennis;
+			};
+			name = Debug;
+		};
+		6A34F36622823182000FFB38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TennisUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.murali.TennisUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Tennis;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -534,6 +642,15 @@
 			buildConfigurations = (
 				6A34F33C227F0CD7000FFB38 /* Debug */,
 				6A34F33D227F0CD7000FFB38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A34F36722823182000FFB38 /* Build configuration list for PBXNativeTarget "TennisUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A34F36522823182000FFB38 /* Debug */,
+				6A34F36622823182000FFB38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
