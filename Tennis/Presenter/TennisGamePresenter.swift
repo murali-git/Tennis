@@ -5,7 +5,6 @@ class TennisGamePresenter {
     init(_ firstPlayer: Player,_ secondPlayer: Player) {
         self.firstPlayer = firstPlayer
         self.secondPlayer = secondPlayer
-        self.tennisGameView = tennisGameView
     }
     
     func scoresPoint(_ currentPlayer: CurrentPlayer) {
