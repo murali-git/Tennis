@@ -61,6 +61,15 @@ class TennisGameTests: XCTestCase {
         XCTAssertEqual(TestScores.SecondPlayerWon.rawValue,tennisGame.getPlayersScore())
     }
     
+    func test_ShouldNotIncreaseTheScore_WhenOneOfThePlayerHasWonTheMatch() {
+        self.winConsequtivePointsForPlayerOne(5, tennisGame: tennisGame)
+        self.winConsequtivePointsForPlayerTwo(7, tennisGame: tennisGame)
+        let _ = tennisGame.getPlayersScore()
+        self.winConsequtivePointsForPlayerOne(4, tennisGame: tennisGame)
+        
+        XCTAssertEqual(TestScores.SecondPlayerWon.rawValue,tennisGame.getPlayersScore())
+    }
+    
     private func buildTennisGame() -> TennisGamePresenter {
         let firstPlayer = buildPlayer("FirstPlayer")
         let secondPlayer = buildPlayer("SecondPlayer")
