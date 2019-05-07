@@ -12,7 +12,7 @@ class TennisViewController: UIViewController {
     
     @IBAction func reset(_ sender: Any) {
         tennisGamePresenter = buildTennisGamePresenter()
-        updateScore("Score Status")
+        updateScore("Points")
     }
     
     @IBAction func playerOneWins(_ sender: Any) {

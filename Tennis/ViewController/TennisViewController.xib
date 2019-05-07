@@ -53,7 +53,7 @@
                         <action selector="playerTwoWins:" destination="-1" eventType="touchUpInside" id="ofb-Mb-u18"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmY-TJ-t7x">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmY-TJ-t7x">
                     <rect key="frame" x="18" y="301" width="339" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="81y-pG-2vo"/>
