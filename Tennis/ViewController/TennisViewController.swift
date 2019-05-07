@@ -1,39 +1,48 @@
 import UIKit
 
 class TennisViewController: UIViewController {
-    private var tennisGamePresenter: TennisGamePresenter!
+    private var tennisGamePresenter: TennisGamePresenter?
     @IBOutlet weak var scoreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationItem.title = "Tennis"
-        buildTennisGame()
+        tennisGamePresenter = buildTennisGamePresenter()
     }
     
     @IBAction func reset(_ sender: Any) {
-        buildTennisGame()
+        tennisGamePresenter = buildTennisGamePresenter()
         updateScore("Score Status")
     }
     
     @IBAction func playerOneWins(_ sender: Any) {
-        tennisGamePresenter.scoresPoint(.FirstPlayer)
-        updateScore(tennisGamePresenter.getPlayersScore())
+        guard let tennisGame = tennisGamePresenter else {
+            return
+        }
+        tennisGame.scoresPoint(.FirstPlayer)
+        updateScore(tennisGame.getPlayersScore())
     }
     
     @IBAction func playerTwoWins(_ sender: Any) {
-        tennisGamePresenter.scoresPoint(.SecondPlayer)
-        updateScore(tennisGamePresenter.getPlayersScore())
+        guard let tennisGame = tennisGamePresenter else {
+            return
+        }
+        tennisGame.scoresPoint(.SecondPlayer)
+        updateScore(tennisGame.getPlayersScore())
     }
     
-    private func buildTennisGame() {
+    //Mark: Helper methods
+    private func buildTennisGamePresenter() -> TennisGamePresenter? {
         do {
             let firstPlayer = try Player("FirstPlayer")
             let secondPlayer = try Player("SecondPlayer")
             
-            self.tennisGamePresenter = TennisGamePresenter.init(firstPlayer, secondPlayer)
+            return TennisGamePresenter.init(firstPlayer, secondPlayer)
         }
         catch {
             updateScore("Exception. Please contact helpdesk")
+            
+            return nil
         }
     }
     

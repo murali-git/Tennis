@@ -34,11 +34,11 @@ class Player {
         }
     }
     
-    func isPlayerScoreGreaterThanOrEqualToForty() -> Bool{
+    func isPlayerScoreGreaterThanOrEqualToForty() -> Bool {
         return score >= 3
     }
     
-    func isPlayerScoreGreaterThanForty() -> Bool{
+    func isPlayerScoreGreaterThanForty() -> Bool {
         return score > 3
     }
 }
