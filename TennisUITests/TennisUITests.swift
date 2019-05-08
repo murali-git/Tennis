@@ -12,14 +12,14 @@ class TennisUITests: XCTestCase {
         app.buttons["player1Scores"].tap()
         app.buttons["player2Scores"].tap()
         
-        let score = app.staticTexts["Fifteen All"]
+        let score = app.staticTexts["15 - 15"]
         XCTAssertTrue(score.exists)
     }
     
     func test_ShouldReturnDefaultPoints_WhenResetIsTapped() {
         app.buttons["reset"].tap()
         
-        let score = app.staticTexts["Points"]
+        let score = app.staticTexts["Love All"]
         XCTAssertTrue(score.exists)
     }
 }

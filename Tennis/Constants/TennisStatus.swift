@@ -1,5 +1,5 @@
 enum TennisStatus: String {
-    case All = "All"
+    case LoveAll = "Love All"
     case Deuce = "Deuce"
     case Advantage = "Advantage"
     case Won = "Won"

@@ -2,10 +2,7 @@ class Player {
     private let playerName: String
     private var score: Int = 0
     
-    init(_ name: String) throws {
-        guard name.count > 0 else {
-            throw TennisError.PlayerNameCannotBeEmpty
-        }
+    init(_ name: String) {
         playerName = name
     }
     
@@ -23,22 +20,20 @@ class Player {
     
     func translateScore() -> String {
         switch score {
-        case 0:
+        case Score.Love:
             return Points.Love.rawValue
-        case 1:
+        case Score.Fifteen:
             return Points.Fifteen.rawValue
-        case 2:
+        case Score.Thirty:
             return Points.Thirty.rawValue
-        default:
+        case Score.Fourty:
             return Points.Fourty.rawValue
+        default:
+            return Points.Advantage.rawValue
         }
     }
     
-    func isPlayerScoreGreaterThanOrEqualToForty() -> Bool {
-        return score >= 3
-    }
-    
-    func isPlayerScoreGreaterThanForty() -> Bool {
-        return score > 3
+    func hasScoredMoreThanFourtyPoints() -> Bool {
+        return score > Score.Fourty
     }
 }

@@ -40,7 +40,7 @@
                     </constraints>
                     <state key="normal" title="Scores"/>
                     <connections>
-                        <action selector="playerOneWins:" destination="-1" eventType="touchUpInside" id="hoF-a6-0O5"/>
+                        <action selector="playerOneScores:" destination="-1" eventType="touchUpInside" id="QDS-2M-Umg"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKb-Fj-gX7">
@@ -52,10 +52,10 @@
                     </constraints>
                     <state key="normal" title="Scores"/>
                     <connections>
-                        <action selector="playerTwoWins:" destination="-1" eventType="touchUpInside" id="ofb-Mb-u18"/>
+                        <action selector="playerTwoScores:" destination="-1" eventType="touchUpInside" id="Vq0-qH-w5N"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmY-TJ-t7x">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love All" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmY-TJ-t7x">
                     <rect key="frame" x="18" y="301" width="339" height="21"/>
                     <accessibility key="accessibilityConfiguration" identifier="Points"/>
                     <constraints>
