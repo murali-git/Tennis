@@ -17,12 +17,10 @@ class TennisViewController: UIViewController, TennisView {
     
     @IBAction func playerOneScores(_ sender: Any) {
         tennisGamePresenter.scoresPoint(.FirstPlayer)
-        tennisGamePresenter.playersScore()
     }
     
     @IBAction func playerTwoScores(_ sender: Any) {
         tennisGamePresenter.scoresPoint(.SecondPlayer)
-        tennisGamePresenter.playersScore()
     }
     
     //Mark: Helper methods

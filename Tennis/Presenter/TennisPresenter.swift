@@ -22,9 +22,11 @@ class TennisPresenter {
         case .SecondPlayer:
             secondPlayer.updateScore()
         }
+        
+        updatePlayersScore()
     }
     
-    func playersScore(){
+    private func updatePlayersScore(){
         if isWinner() {
             isGameOver = true
             tennisView.displayScore(gameStatus:highestScorePlayerName() + " " + TennisStatus.Won.rawValue)
